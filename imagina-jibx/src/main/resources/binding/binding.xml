@@ -1,0 +1,121 @@
+<binding name="binding" package="com.imagina.model.wowza">
+  <mapping abstract="true" type-name="applicationInstance" class="com.imagina.model.wowza.ApplicationInstance">
+    <structure name="Name" usage="optional">
+		<value style="cdata" get-method="getName" set-method="setName" usage="optional" />
+	</structure>
+    <value style="element" name="TimeRunning" get-method="getTimeRunning" set-method="setTimeRunning" usage="optional"/>
+    <value style="element" name="ConnectionsCurrent" get-method="getConnectionsCurrent" set-method="setConnectionsCurrent" usage="optional"/>
+    <value style="element" name="ConnectionsTotal" get-method="getConnectionsTotal" set-method="setConnectionsTotal" usage="optional"/>
+    <value style="element" name="ConnectionsTotalAccepted" get-method="getConnectionsTotalAccepted" set-method="setConnectionsTotalAccepted" usage="optional"/>
+    <value style="element" name="ConnectionsTotalRejected" get-method="getConnectionsTotalRejected" set-method="setConnectionsTotalRejected" usage="optional"/>
+    <value style="element" name="RTMPConnectionCount" get-method="getRTMPConnectionCount" set-method="setRTMPConnectionCount" usage="optional"/>
+    <value style="element" name="RTPConnectionCount" get-method="getRTPConnectionCount" set-method="setRTPConnectionCount" usage="optional"/>
+    <value style="element" name="CupertinoConnectionCount" get-method="getCupertinoConnectionCount" set-method="setCupertinoConnectionCount" usage="optional"/>
+    <value style="element" name="SmoothConnectionCount" get-method="getSmoothConnectionCount" set-method="setSmoothConnectionCount" usage="optional"/>
+    <value style="element" name="SanJoseConnectionCount" get-method="getSanJoseConnectionCount" set-method="setSanJoseConnectionCount" usage="optional"/>
+    <value style="element" name="RTMPSessionCount" get-method="getRTMPSessionCount" set-method="setRTMPSessionCount" usage="optional"/>
+    <value style="element" name="HTTPSessionCount" get-method="getHTTPSessionCount" set-method="setHTTPSessionCount" usage="optional"/>
+    <value style="element" name="RTPSessionCount" get-method="getRTPSessionCount" set-method="setRTPSessionCount" usage="optional"/>
+    <collection get-method="getClients" set-method="setClients" usage="optional" create-type="java.util.ArrayList">
+      <structure map-as="client" name="Client"/>
+    </collection>
+    <collection get-method="getHTTPSessions" set-method="setHTTPSessions" usage="optional" create-type="java.util.ArrayList">
+      <structure map-as="HTTPSession" name="HTTPSession"/>
+    </collection>
+    <collection get-method="getRTPSessions" set-method="setRTPSessions" usage="optional" create-type="java.util.ArrayList">
+      <structure map-as="HTTPSession" name="RTPSession"/>
+    </collection>
+  </mapping>
+  <mapping class="com.imagina.model.wowza.ApplicationInstance" name="ApplicationInstance">
+    <structure map-as="applicationInstance"/>
+  </mapping>
+  <mapping abstract="true" type-name="application" class="com.imagina.model.wowza.Application">
+    <structure name="Name" usage="optional">
+		<value style="cdata" get-method="getName" set-method="setName" usage="optional" />
+	</structure>
+    <value style="element" name="Status" get-method="getStatus" set-method="setStatus" usage="optional"/>
+    <value style="element" name="TimeRunning" get-method="getTimeRunning" set-method="setTimeRunning" usage="optional"/>
+    <value style="element" name="ConnectionsCurrent" get-method="getConnectionsCurrent" set-method="setConnectionsCurrent" usage="optional"/>
+    <value style="element" name="ConnectionsTotal" get-method="getConnectionsTotal" set-method="setConnectionsTotal" usage="optional"/>
+    <value style="element" name="ConnectionsTotalAccepted" get-method="getConnectionsTotalAccepted" set-method="setConnectionsTotalAccepted" usage="optional"/>
+    <value style="element" name="ConnectionsTotalRejected" get-method="getConnectionsTotalRejected" set-method="setConnectionsTotalRejected" usage="optional"/>
+    <collection get-method="getApplicationInstances" set-method="setApplicationInstances" usage="optional" create-type="java.util.ArrayList">
+      <structure map-as="applicationInstance" name="ApplicationInstance"/>
+    </collection>
+  </mapping>
+  <mapping class="com.imagina.model.wowza.Application" name="Application">
+    <structure map-as="application"/>
+  </mapping>
+  <mapping abstract="true" type-name="client" class="com.imagina.model.wowza.Client">
+    <value style="element" name="ClientId" get-method="getClientId" set-method="setClientId" usage="optional"/>
+    <value style="element" name="FlashVersion" get-method="getFlashVersion" set-method="setFlashVersion" usage="optional"/>
+    <value style="element" name="IpAddress" get-method="getIpAddress" set-method="setIpAddress" usage="optional"/>
+    <structure name="Referrer" usage="optional">
+		<value style="cdata" get-method="getReferrer" set-method="setReferrer" usage="optional" />
+	</structure>
+    <structure name="QueryString" usage="optional">
+		<value style="cdata" get-method="getQueryString" set-method="setQueryString" usage="optional" />
+	</structure>
+    <value style="element" name="TimeRunning" get-method="getTimeRunning" set-method="setTimeRunning" usage="optional"/>
+    <value style="element" name="DateStarted" get-method="getDateStarted" set-method="setDateStarted" usage="optional"/>
+    <structure name="URI" usage="optional">
+		<value style="cdata" get-method="getURI" set-method="setURI" usage="optional" />
+	</structure>
+    <value style="element" name="Protocol" get-method="getProtocol" set-method="setProtocol" usage="optional"/>
+    <value style="element" name="IsSSL" get-method="getIsSSL" set-method="setIsSSL" usage="optional"/>
+    <value style="element" name="IsEncrypted" get-method="getIsEncrypted" set-method="setIsEncrypted" usage="optional"/>
+    <value style="element" name="Port" get-method="getPort" set-method="setPort" usage="optional"/>
+    <value style="element" name="LastValidateTime" get-method="getLastValidateTime" set-method="setLastValidateTime" usage="optional"/>
+    <value style="element" name="IoSessionBytesSent" get-method="getIoSessionBytesSent" set-method="setIoSessionBytesSent" usage="optional"/>
+    <value style="element" name="IoSessionBytesReceived" get-method="getIoSessionBytesReceived" set-method="setIoSessionBytesReceived" usage="optional"/>
+    <value style="element" name="IoSessionLastIo" get-method="getIoSessionLastIo" set-method="setIoSessionLastIo" usage="optional"/>
+    <value style="element" name="IoBytesSent" get-method="getIoBytesSent" set-method="setIoBytesSent" usage="optional"/>
+    <value style="element" name="IoBytesReceived" get-method="getIoBytesReceived" set-method="setIoBytesReceived" usage="optional"/>
+  </mapping>
+  <mapping class="com.imagina.model.wowza.Client" name="Client">
+    <structure map-as="client"/>
+  </mapping>
+  <mapping abstract="true" type-name="HTTPSession" class="com.imagina.model.wowza.HTTPSession">
+    <value style="element" name="SessionId" get-method="getSessionId" set-method="setSessionId" usage="optional"/>
+    <value style="element" name="IpAddress" get-method="getIpAddress" set-method="setIpAddress" usage="optional"/>
+    <value style="element" name="Referrer" get-method="getReferrer" set-method="setReferrer" usage="optional"/>
+    <value style="element" name="QueryString" get-method="getQueryString" set-method="setQueryString" usage="optional"/>
+    <value style="element" name="TimeRunning" get-method="getTimeRunning" set-method="setTimeRunning" usage="optional"/>
+    <value style="element" name="DateStarted" get-method="getDateStarted" set-method="setDateStarted" usage="optional"/>
+    <value style="element" name="URI" get-method="getURI" set-method="setURI" usage="optional"/>
+    <value style="element" name="Protocol" get-method="getProtocol" set-method="setProtocol" usage="optional"/>
+    <value style="element" name="SessionType" get-method="getSessionType" set-method="setSessionType" usage="optional"/>
+    <value style="element" name="Port" get-method="getPort" set-method="setPort" usage="optional"/>
+    <value style="element" name="IoBytesSent" get-method="getIoBytesSent" set-method="setIoBytesSent" usage="optional"/>
+    <value style="element" name="IoBytesReceived" get-method="getIoBytesReceived" set-method="setIoBytesReceived" usage="optional"/>
+    <value style="element" name="IoLastRequest" get-method="getIoLastRequest" set-method="setIoLastRequest" usage="optional"/>
+  </mapping>
+  <mapping class="com.imagina.model.wowza.HTTPSession" name="HTTPSession">
+    <structure map-as="HTTPSession"/>
+  </mapping>
+  <mapping abstract="true" type-name="VHost" class="com.imagina.model.wowza.VHost">
+    <structure name="Name" usage="optional">
+		<value style="cdata" get-method="getName" set-method="setName" usage="optional" />
+	</structure>
+    <value style="element" name="TimeRunning" get-method="getTimeRunning" set-method="setTimeRunning" usage="optional"/>
+    <value style="element" name="ConnectionsLimit" get-method="getConnectionsLimit" set-method="setConnectionsLimit" usage="optional"/>
+    <value style="element" name="ConnectionsCurrent" get-method="getConnectionsCurrent" set-method="setConnectionsCurrent" usage="optional"/>
+    <value style="element" name="ConnectionsTotal" get-method="getConnectionsTotal" set-method="setConnectionsTotal" usage="optional"/>
+    <value style="element" name="ConnectionsTotalAccepted" get-method="getConnectionsTotalAccepted" set-method="setConnectionsTotalAccepted" usage="optional"/>
+    <value style="element" name="ConnectionsTotalRejected" get-method="getConnectionsTotalRejected" set-method="setConnectionsTotalRejected" usage="optional"/>
+    <collection get-method="getApplications" set-method="setApplications" usage="optional" create-type="java.util.ArrayList">
+      <structure map-as="application" name="Application"/>
+    </collection>
+  </mapping>
+  <mapping class="com.imagina.model.wowza.VHost" name="VHost">
+    <structure map-as="VHost"/>
+  </mapping>
+  <mapping abstract="true" type-name="wowzaMediaServerPro" class="com.imagina.model.wowza.WowzaMediaServerPro">
+    <collection get-method="getVHosts" set-method="setVHosts" usage="optional" create-type="java.util.ArrayList">
+      <structure map-as="VHost" name="VHost"/>
+    </collection>
+  </mapping>
+  <mapping class="com.imagina.model.wowza.WowzaMediaServerPro" name="WowzaMediaServerPro">
+    <structure map-as="wowzaMediaServerPro"/>
+  </mapping>
+</binding>

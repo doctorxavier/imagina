@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="WowzaMediaServerPro" type="WowzaMediaServerPro"/>
+  <xs:complexType name="ApplicationInstance">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name"/>
+      <xs:element type="xs:string" name="TimeRunning"/>
+      <xs:element type="xs:string" name="ConnectionsCurrent"/>
+      <xs:element type="xs:string" name="ConnectionsTotal"/>
+      <xs:element type="xs:string" name="ConnectionsTotalAccepted"/>
+      <xs:element type="xs:string" name="ConnectionsTotalRejected"/>
+      <xs:element type="xs:string" name="RTMPConnectionCount"/>
+      <xs:element type="xs:string" name="RTPConnectionCount"/>
+      <xs:element type="xs:string" name="CupertinoConnectionCount"/>
+      <xs:element type="xs:string" name="SmoothConnectionCount"/>
+      <xs:element type="xs:string" name="SanJoseConnectionCount"/>
+      <xs:element type="xs:string" name="RTMPSessionCount"/>
+      <xs:element type="xs:string" name="HTTPSessionCount"/>
+      <xs:element type="xs:string" name="RTPSessionCount"/>
+      <xs:element type="Client" name="Client" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="HTTPSession" name="HTTPSession" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Application">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name"/>
+      <xs:element type="xs:string" name="Status"/>
+      <xs:element type="xs:string" name="TimeRunning" minOccurs="0"/>
+      <xs:element type="xs:string" name="ConnectionsCurrent" minOccurs="0"/>
+      <xs:element type="xs:string" name="ConnectionsTotal" minOccurs="0"/>
+      <xs:element type="xs:string" name="ConnectionsTotalAccepted" minOccurs="0"/>
+      <xs:element type="xs:string" name="ConnectionsTotalRejected" minOccurs="0"/>
+      <xs:element type="ApplicationInstance" name="ApplicationInstance" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Client">
+    <xs:sequence>
+      <xs:element type="xs:string" name="ClientId"/>
+      <xs:element type="xs:string" name="FlashVersion"/>
+      <xs:element type="xs:string" name="IpAddress"/>
+      <xs:element type="xs:string" name="Referrer"/>
+      <xs:element type="xs:string" name="QueryString"/>
+      <xs:element type="xs:string" name="TimeRunning"/>
+      <xs:element type="xs:string" name="DateStarted"/>
+      <xs:element type="xs:string" name="URI"/>
+      <xs:element type="xs:string" name="Protocol"/>
+      <xs:element type="xs:string" name="IsSSL"/>
+      <xs:element type="xs:string" name="IsEncrypted"/>
+      <xs:element type="xs:string" name="Port"/>
+      <xs:element type="xs:string" name="LastValidateTime"/>
+      <xs:element type="xs:string" name="IoSessionBytesSent"/>
+      <xs:element type="xs:string" name="IoSessionBytesReceived"/>
+      <xs:element type="xs:string" name="IoSessionLastIo"/>
+      <xs:element type="xs:string" name="IoBytesSent"/>
+      <xs:element type="xs:string" name="IoBytesReceived"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HTTPSession">
+    <xs:sequence>
+      <xs:element type="xs:string" name="SessionId"/>
+      <xs:element type="xs:string" name="IpAddress"/>
+      <xs:element type="xs:string" name="Referrer"/>
+      <xs:element type="xs:string" name="QueryString"/>
+      <xs:element type="xs:string" name="TimeRunning"/>
+      <xs:element type="xs:string" name="DateStarted"/>
+      <xs:element type="xs:string" name="URI"/>
+      <xs:element type="xs:string" name="Protocol"/>
+      <xs:element type="xs:string" name="SessionType"/>
+      <xs:element type="xs:string" name="Port"/>
+      <xs:element type="xs:string" name="IoBytesSent"/>
+      <xs:element type="xs:string" name="IoBytesReceived"/>
+      <xs:element type="xs:string" name="IoLastRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VHost">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name"/>
+      <xs:element type="xs:string" name="TimeRunning"/>
+      <xs:element type="xs:string" name="ConnectionsLimit"/>
+      <xs:element type="xs:string" name="ConnectionsCurrent"/>
+      <xs:element type="xs:string" name="ConnectionsTotal"/>
+      <xs:element type="xs:string" name="ConnectionsTotalAccepted"/>
+      <xs:element type="xs:string" name="ConnectionsTotalRejected"/>
+      <xs:element type="Application" name="Application" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WowzaMediaServerPro">
+    <xs:sequence>
+      <xs:element type="VHost" name="VHost"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

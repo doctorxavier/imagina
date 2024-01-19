@@ -1,0 +1,55 @@
+{"infos":
+	[
+		{"date":1392384356304,"info":
+			[
+				{"dataCenter":"cdn22a","numCon":37,"numConLive":13,"numConVod":6},
+				{"dataCenter":"cdnvir","numCon":16,"numConLive":16,"numConVod":0}
+			]
+		},
+		{"date":1392384357304,"info":
+			[
+				{"dataCenter":"cdn22a","numCon":37,"numConLive":13,"numConVod":6},
+				{"dataCenter":"cdnvir","numCon":16,"numConLive":16,"numConVod":0}
+			]
+		},
+		{"date":1392384358304,"info":
+			[
+				{"dataCenter":"cdn22a","numCon":37,"numConLive":13,"numConVod":6},
+				{"dataCenter":"cdnvir","numCon":16,"numConLive":16,"numConVod":0}
+			]
+		}
+	]
+}
+
+{"info":
+	{"date":1392384403779,"info":
+		[
+			{"dataCenter":"cdn22a","numCon":37,"numConLive":13,"numConVod":6},
+			{"dataCenter":"cdnvir","numCon":16,"numConLive":16,"numConVod":0}
+		]
+	}
+}
+
+[
+["golt_golstadium_live_titan_MB_500","10.31.64.32"],
+["golt_live_24h_MB_500","10.31.64.33"],
+["imagina_auditori_generic_MB_500","10.31.64.32"],
+["imagina_beautycam","10.31.64.31"],
+["imagina_fox_01_MB_1200","10.31.64.31"],
+["millenials_7d924d374631b54952ab54d8eaa3e238","178.249.12.41"],
+["testNice_test3","10.31.64.31"],
+["testNice_test4","10.31.64.31"]
+] 
+
+{"streams":
+  [
+    {"name":"golt_golstadium_live_titan_MB_500","url":"10.31.64.32"},
+    {"name":"golt_live_24h_MB_500","url":"10.31.64.33"},
+    {"name":"imagina_auditori_generic_MB_500","url":"10.31.64.32"},
+    {"name":"imagina_beautycam","url":"10.31.64.31"},
+    {"name":"imagina_fox_01_MB_1200","url":"10.31.64.31"},
+    {"name":"millenials_7d924d374631b54952ab54d8eaa3e238","url":"178.249.12.41"},
+    {"name":"testNice_test3","url":"10.31.64.31"},
+    {"name":"testNice_test4","url":"10.31.64.31"}
+  ]
+}

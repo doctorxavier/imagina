@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd 
+	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd"
+	default-lazy-init="false">
+
+	<import resource="imagina-model-tx.xml"/>
+
+	<bean id="dataSourceNagios"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/centreon" />
+		<property name="username" value="monitor" />
+		<property name="password" value="Mediapro013" />
+	</bean>
+	
+	<bean id="entityManagerFactoryNagios"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceUnitName" value="imagina-model-nagios"/>
+		<property name="dataSource" ref="dataSourceNagios" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="showSql" value="false" />
+				<property name="generateDdl" value="false" />
+				<property name="databasePlatform" value="org.hibernate.dialect.MySQLInnoDBDialect" />
+			</bean>
+		</property>
+		<property name="jpaPropertyMap">
+			<map>
+				<entry key="hibernate.transaction.flush_before_completion" value="true" />
+				<entry key="hibernate.connection.release_mode" value="auto" />
+				<entry key="hibernate.show_sql" value="false" />
+				<entry key="hibernate.format_sql" value="false" />
+				<entry key="hibernate.use_sql_comments" value="false" />
+				<entry key="hibernate.generate_statistics" value="false" />
+				<entry key="hibernate.max_fetch_depth" value="2" />
+			</map>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+
+	<bean id="jpaTransactionManagerNagios" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactoryNagios" />
+	</bean>
+
+</beans>

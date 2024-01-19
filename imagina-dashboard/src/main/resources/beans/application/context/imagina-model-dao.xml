@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="imaginaDao" class="com.imagina.dao.jpa.imagina.ImaginaDao" />
+	<bean id="nagiosDao" class="com.imagina.dao.jpa.nagios.NagiosDao" />
+	<bean id="niceDao" class="com.imagina.dao.jpa.nice.NiceDao" />
+
+	<bean id="abstractImaginaDao" class="com.imagina.dao.AbstractDao" abstract="true">
+		<property name="dao" ref="imaginaDao" />
+	</bean>
+	
+	<bean id="abstractNagiosDao" class="com.imagina.dao.AbstractDao" abstract="true">
+		<property name="dao" ref="nagiosDao" />
+	</bean>
+	
+	<bean id="abstractNiceDao" class="com.imagina.dao.AbstractDao" abstract="true">
+		<property name="dao" ref="niceDao" />
+	</bean>
+	
+	<bean id="infoDao" class="com.imagina.dao.imagina.InfoDao" parent="abstractImaginaDao" />
+	
+	<bean id="dataCenterInfoDao" class="com.imagina.dao.imagina.DataCenterInfoDao" parent="abstractImaginaDao" />
+	
+	<bean id="bitrateDao" class="com.imagina.dao.nagios.BitrateDao" parent="abstractNagiosDao" />
+	
+	<bean id="systemDao" class="com.imagina.dao.nice.SystemDao" parent="abstractNiceDao" />
+	<bean id="streamDao" class="com.imagina.dao.nice.StreamDao" parent="abstractNiceDao" />
+	
+</beans>
